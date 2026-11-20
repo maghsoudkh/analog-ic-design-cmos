@@ -1,24 +1,24 @@
-# Lab 02 — Fully Differential Current-Mirror OTA
+# Lab 02: fully differential current-mirror OTA
 
-Full write-up: Chapter 2 of the [report](../report/AICD_lab_report.pdf).
+Chapter 2 of the [report](../report/AICD_lab_report.pdf) has the full write-up.
 
-**Topology:** p-MOS input differential pair, current-mirror loads with gain to the output branches, and common-mode feedback (CMFB).
+The OTA has a p-MOS input pair, current-mirror loads that add gain on the way to the output branches, and common-mode feedback.
 
-## Process
+## Design steps
 
-1. **Initial design:** DC operating point, g<sub>m</sub> and r<sub>o</sub> per device, and current steering in the differential pair. A<sub>dd0</sub> = 22.6 dB and f<sub>u</sub> = 690 MHz, below specification.
-2. **Common-mode analysis:** very low common-mode gain, so CMRR is high.
-3. **Monte Carlo offset (N = 100):** V<sub>OS</sub> = 7.28 mV for the initial design.
-4. **Redesign:** re-biased the input pair (I<sub>D</sub> ≈ 188 µA), then widened it from 20 µm to 33 µm to raise g<sub>m1</sub> and reach the GBW target.
+1. We simulated the initial design's DC operating point, the g<sub>m</sub> and r<sub>o</sub> of each device, and the current steering in the input pair. It gave A<sub>dd0</sub> = 22.6 dB and f<sub>u</sub> = 690 MHz, both below specification.
+2. The common-mode gain is very low, so the CMRR is high.
+3. A Monte Carlo run with N = 100 gave an offset of 7.28 mV for the initial design.
+4. We re-biased the input pair to I<sub>D</sub> ≈ 188 µA, then widened it from 20 µm to 33 µm to raise g<sub>m1</sub> and reach the GBW target.
 
-## Final design vs specification
+## Final design against the specification
 
 | Parameter | Specification | Simulated |
 |---|---|---|
-| A<sub>dd0</sub> | > 30 dB | **31.86 dB** |
-| GBW | ≥ 1 GHz | **1.01 GHz** |
-| V<sub>OS</sub> (σ, Monte Carlo) | < 4 mV | **3.38 mV** |
+| A<sub>dd0</sub> | > 30 dB | 31.86 dB |
+| GBW | ≥ 1 GHz | 1.01 GHz |
+| V<sub>OS</sub>, σ from Monte Carlo | < 4 mV | 3.38 mV |
 
 ![OTA schematic](figures/schematic.png)
-![Final Bode plot](figures/final-bode.png)
-![Final offset distribution](figures/final-offset-montecarlo.png)
+![Bode plot of the final design](figures/final-bode.png)
+![Offset distribution of the final design](figures/final-offset-montecarlo.png)

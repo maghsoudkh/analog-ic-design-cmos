@@ -1,0 +1,140 @@
+\documentclass[12pt,a4paper]{report}
+
+% ---------- Packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+% ---------- Premium Academic Font Selection ----------
+% Linux Libertine for text, Libertinus for Math
+% This is widely considered one of the most legible and elegant academic fonts.
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage[scaled=0.95]{berasans} % Professional Sans-serif for headers
+\usepackage[scaled=0.85]{beramono} % Clean monospaced for code/emails
+
+% ---------- SIUnitx Setup ----------
+\sisetup{
+    detect-all,
+    separate-uncertainty = true,
+    exponent-product = \cdot,
+    inter-unit-product = \cdot
+}
+
+% ---------- Hyperref setup ----------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    pdftitle={Analogue Integrated Circuit Design Laboratory Report},
+    pdfauthor={Amir Amaghsoud, Simone Sbrescia}
+}
+
+% ---------- Style ----------
+% ---------- Clean Academic Style (IEEE-like) ----------
+
+% Chapter style
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\huge}
+  {\chaptername\ \thechapter}{10pt}{\Huge}
+
+% Section style
+\titleformat{\section}
+  {\normalfont\bfseries\Large}
+  {\thesection}{1em}{}
+
+% Subsection style
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize}
+  {\thesubsection}{1em}{}
+
+% Spacing (molto importante per look professionale)
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\titlespacing*{\section}{0pt}{15pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+% Custom spacing
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0pt}
+\onehalfspacing
+
+% ---------- Header / Footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Analogue Integrated Circuit Design}
+\fancyhead[R]{\small Laboratory Report}
+\fancyfoot[C]{\thepage}
+
+% ---------- Custom commands ----------
+
+\definecolor{unipdred}{RGB}{155,0,20}
+\begin{document}
+
+% ---------- Title Page ----------
+\begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+    \vspace*{3cm}
+    
+    % Optional: Add University Logo here if you have one
+    % \includegraphics[width=0.3\textwidth]{unipd_logo.png} 
+    
+    \vspace{1cm}
+
+    {\huge \textbf{University of Padua}}\\[0.5cm]
+    {\large Department of Information Engineering}\\[2cm]
+
+    {\color{unipdred}\Huge \textbf{Analogue Integrated Circuit Design}}\\[0.4cm]
+    {\color{unipdred}\Huge \textbf{Laboratory Sessions Report}}
+
+    \vspace{2cm}
+
+    {\large Academic Year 2025/2026}
+
+    \vfill
+
+    \begin{flushleft}
+    \begin{spacing}{1.2}
+    {\LARGE \textbf{Amirkhashayar Maghsoud}} \\[0.4cm]
+    {\LARGE \textbf{Simone Sbrescia}}
+    \end{spacing}
+    \end{flushleft}
+    
+    \vspace{1cm}
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+% Main Content
+
+\include{chapters/lab01}
+\include{chapters/lab02}
+\include{chapters/lab03}
+\include{chapters/lab04}
+
+
+
+
+
+\end{document}

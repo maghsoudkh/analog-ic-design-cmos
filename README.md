@@ -38,3 +38,7 @@ report/                                   Full report as PDF, and its LaTeX sour
 
 - Amirkhashayar Maghsoud
 - Simone Sbrescia
+
+## License
+
+The report, its LaTeX source, the figures and the text are licensed under [CC BY 4.0](LICENSE). You may reuse them with credit to the authors listed above.
